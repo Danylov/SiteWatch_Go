@@ -1,0 +1,82 @@
+:root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --text: #1f2933;
+  --muted: #6b7785;
+  --accent: #00add8; /* Go blue */
+  --up: #2e9d5b;
+  --down: #d64545;
+  --border: #e1e5ea;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+main { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+h1 { margin: 0; color: var(--accent); }
+h2 { margin: 0 0 12px; font-size: 1.15rem; }
+.muted { color: var(--muted); margin: 4px 0 12px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+
+form { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-start; }
+label { display: flex; flex-direction: column; gap: 4px; font-size: .9rem; flex: 1 1 200px; }
+input { padding: 8px; border: 1px solid var(--border); border-radius: 6px; font-size: 1rem; }
+input.invalid { border-color: var(--down); }
+.field-error { color: var(--down); min-height: 1em; }
+form button { margin-top: 21px; }
+
+button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font-size: .95rem;
+  cursor: pointer;
+}
+button:disabled { opacity: .6; cursor: wait; }
+button.secondary { background: #8895a3; }
+button.danger { background: transparent; color: var(--down); padding: 4px 8px; }
+
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-weight: 500; }
+tbody tr.clickable { cursor: pointer; }
+tbody tr.clickable:hover { background: #f0f8fb; }
+td.url { word-break: break-all; }
+
+.badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: .8rem; color: #fff; }
+.badge.up { background: var(--up); }
+.badge.down { background: var(--down); }
+.badge.unknown { background: #a0a9b3; }
+
+#toast {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: var(--text);
+  color: #fff;
+  max-width: calc(100% - 32px);
+}
+#toast.error { background: var(--down); }
+
+@media (max-width: 640px) {
+  th:nth-child(3), td:nth-child(3), th:nth-child(6), td:nth-child(6) { display: none; }
+}

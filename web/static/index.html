@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SiteWatch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>SiteWatch</h1>
+    <p class="muted">Мониторинг доступности сайтов</p>
+  </header>
+
+  <section class="card">
+    <h2>Добавить сайт</h2>
+    <form id="add-form" novalidate>
+      <label>Название
+        <input name="name" placeholder="Go" autocomplete="off">
+        <small class="field-error" data-field="name"></small>
+      </label>
+      <label>URL
+        <input name="url" placeholder="https://go.dev" autocomplete="off">
+        <small class="field-error" data-field="url"></small>
+      </label>
+      <button type="submit">Добавить</button>
+    </form>
+  </section>
+
+  <section class="card">
+    <div class="row">
+      <h2>Сайты</h2>
+      <button id="run-btn">Проверить все</button>
+    </div>
+    <p id="last-run" class="muted"></p>
+    <table>
+      <thead>
+      <tr><th>Статус</th><th>Название</th><th>URL</th><th>Код</th><th>Время</th><th>Проверен</th><th></th></tr>
+      </thead>
+      <tbody id="sites"></tbody>
+    </table>
+    <p id="empty" class="muted" hidden>Сайтов пока нет — добавьте первый.</p>
+  </section>
+
+  <section class="card" id="history" hidden>
+    <div class="row">
+      <h2>История: <span id="history-title"></span></h2>
+      <button class="secondary" id="history-close">Закрыть</button>
+    </div>
+    <table>
+      <thead><tr><th>Статус</th><th>Код</th><th>Время</th><th>Ошибка</th><th>Когда</th></tr></thead>
+      <tbody id="history-rows"></tbody>
+    </table>
+  </section>
+
+  <div id="toast" hidden></div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

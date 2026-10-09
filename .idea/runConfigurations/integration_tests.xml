@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="integration tests (PostgreSQL)" type="GoTestRunConfiguration" factoryName="Go Test">
+    <module name="sitewatch" />
+    <working_directory value="$PROJECT_DIR$/internal/postgres" />
+    <go_parameters value="-tags integration -count=1" />
+    <envs>
+      <env name="TEST_DATABASE_URL" value="postgres://sitewatch:sitewatch@localhost:5432/sitewatch_test?sslmode=disable" />
+    </envs>
+    <kind value="PACKAGE" />
+    <package value="sitewatch/internal/postgres" />
+    <directory value="$PROJECT_DIR$" />
+    <filePath value="$PROJECT_DIR$" />
+    <framework value="gotest" />
+    <method v="2" />
+  </configuration>
+</component>

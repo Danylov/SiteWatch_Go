@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="all tests (-race)" type="GoTestRunConfiguration" factoryName="Go Test">
+    <module name="sitewatch" />
+    <working_directory value="$PROJECT_DIR$" />
+    <go_parameters value="-race -count=1" />
+    <envs>
+      <env name="CGO_ENABLED" value="1" />
+    </envs>
+    <kind value="DIRECTORY" />
+    <package value="sitewatch" />
+    <directory value="$PROJECT_DIR$" />
+    <filePath value="$PROJECT_DIR$" />
+    <framework value="gotest" />
+    <method v="2" />
+  </configuration>
+</component>
